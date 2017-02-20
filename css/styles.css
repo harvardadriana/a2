@@ -1,0 +1,41 @@
+body {
+	padding: 2em;
+	margin: 0 auto;
+	width: 50%;
+	height: auto;
+}
+
+h1, p {
+	text-align: center;	
+}
+
+img {
+	width: 300px;
+	height: auto;
+	margin-bottom: 1em;
+}
+
+ol, ul {
+	list-style-type: none;
+}
+
+label {
+	text-align: right;
+	width: 150px;
+}
+
+.required {
+	color: red;
+	font-size: small;
+}
+
+@media screen and (max-width: 900px) {
+	body {
+		width: 700px;
+	}
+}
+
+/*   DELETE LATER  */
+main {
+	background: yellow;
+}
