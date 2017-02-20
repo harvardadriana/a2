@@ -10,35 +10,40 @@
 
 	<main>
 		<h1>Scrabble Word Score Calculator</h1>
+		<!-- <img> wrapped in <p> tag for semantic reasons -->
 		<p><img src="images/scrabble.jpg" alt="Scrabble Wooden Letters" /></p>
 		
 		<form method="GET" action="/">
 
 			<!-- YOUR WORD -->
-			<ul>
-			<li><label for="word">Your word<br /><span class="required">&#42;Required</span></label>
-			<input type="text" name="word" id="word" /></li>
-			</ul>
+			<label for="word" class="textinput">Your word<br /><span class="required">&#42;Required</span></label>
+			<input type="text" name="word" id="word" class="textinput" />
+
 
 			<!-- BONUS POINT -->
-			<ul>
+			<fieldset>
+				<legend>Bonus point</legend>
+				<div id="bonus">
+					<label><input type="radio" name="bonus" value="none" />None</label>
+					<label><input type="radio" name="bonus" value="doubleWordScore" />Double word score</label>
+					<label><input type="radio" name="bonus" value="tripleWordScore" />Triple word score</label>
+				</div>
+			</fieldset>
 
-			<legend>Bonus point</legend>
-				<li><label><input type="radio" name="bonus" value="none" />None</label></li>
-				<li><label><input type="radio" name="bonus" value="doubleWordScore" />Double word score</label></li>
-				<li><label><input type="radio" name="bonus" value="tripleWordScore" />Triple word score</label></li>
-			</ul>
 
 			<!-- BINGO -->
-			<ul>
-					<legend>Include 50 point &#34;bingo&#34;&#63;<br />&#40;word that uses all 7 tiles&#41;</legend>
-				<li><label><input type="checkbox" name="bingo" value="yes" checked>Yes</label></li>
-			</ul>
+			<fieldset>
+				<legend>Include 50 point &#34;bingo&#34;&#63;<br /><span id="note">&#40;word that uses all 7 tiles&#41;</span></legend>
+				<div id="bingo">
+					<label><input type="checkbox" name="bingo" value="yes" checked>Yes</label>
+				</div>
+			</fieldset>
 
 			<!-- SUBMIT BUTTON -->
-			<p><input type="submit" name="calculate" value="Calculate" /></p>
+			<input type="submit" name="calculate" value="Calculate" />
 
-			<!-- RESULT OF POINTS -->
+			<!-- SCORE  -->
+			<span id="score"></span>
 
 		</form>
 	</main>

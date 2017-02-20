@@ -1,8 +1,28 @@
+/*  reset css  
+ *****************/
+body, img, label, input, legend, fieldset  {
+	padding: 0;
+	margin: 0;
+}
+
+
+/*  general styles  
+ *****************/
+html {
+	background-color: #E1CAA7;
+}
+
 body {
-	padding: 2em;
 	margin: 0 auto;
-	width: 50%;
+	width: 660px;
 	height: auto;
+}
+
+main {
+	margin-top: 50px;
+	background-color: #fff;
+	border-radius: 25px;
+	padding: 36px;
 }
 
 h1, p {
@@ -12,30 +32,63 @@ h1, p {
 img {
 	width: 300px;
 	height: auto;
-	margin-bottom: 1em;
+	margin-bottom: 16px;
 }
 
-ol, ul {
-	list-style-type: none;
-}
 
-label {
-	text-align: right;
-	width: 150px;
-}
-
+/*  forms
+ *****************/
 .required {
 	color: red;
 	font-size: small;
+	font-style: italic;
 }
 
-@media screen and (max-width: 900px) {
-	body {
-		width: 700px;
-	}
+label.textinput, legend {
+	display: block;
+	float: left;
+	width: 250px;
+	text-align: right; 
+	margin-right: 15px;
+	font-weight: bold;
 }
 
-/*   DELETE LATER  */
-main {
-	background: yellow;
+input.textinput {
+	width: 150px;
+	height: 30px;
+}
+
+fieldset {
+	margin: 25px 0;
+	border: none;
+}
+
+div#bonus, div#bingo {
+	float: left;
+	width: 200px;
+}
+
+#bonus label {
+	display: block;
+}
+
+#bonus input, #bingo input {
+	margin-right: 10px;
+}
+
+#note {
+	font-weight: normal;
+}
+
+input[type="submit"] {
+	display: block;
+	width: 130px;
+	height: 40px;
+	margin: 30px 0 30px 265px;
+	background-color: #E1CAA7;
+	border-radius: 15px;
+}
+
+#score {
+	
 }
