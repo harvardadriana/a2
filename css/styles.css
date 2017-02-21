@@ -9,7 +9,7 @@ body, img, label, input, legend, fieldset  {
 /*  general styles  
  *****************/
 html {
-	background-color: #E1CAA7;
+	background-color: #3B3E71;
 }
 
 body {
@@ -23,6 +23,10 @@ main {
 	background-color: #fff;
 	border-radius: 25px;
 	padding: 36px;
+}
+
+h1 {
+	color: #17182d;
 }
 
 h1, p {
@@ -85,10 +89,16 @@ input[type="submit"] {
 	width: 130px;
 	height: 40px;
 	margin: 30px 0 30px 265px;
-	background-color: #E1CAA7;
+	background-color: #d7d8e2;
 	border-radius: 15px;
 }
 
 #score {
-	
+	width: 400px;
+	margin: 0 auto;
+	padding: 7px 40px;
+	color: #fff;
+	font-size: 150%;
+	background-color: #75779b;
+	border-radius: 25px;
 }
