@@ -18,7 +18,8 @@ $bonus = $form->get('bonus', '');
 $bingo = $form->isChosen('bingo');
 
 // variables
-$score = 0;
+global $score;
+
 
 if($form->isSubmitted()) {
 
@@ -30,7 +31,7 @@ if($form->isSubmitted()) {
 
 	// sum values for each letter
 	for ($i = 0; $i < $totalLetters; $i++) {
-		$value += $tilesValues[$wordCaps];
+		$score += $tilesValues[$wordCaps[$i]];
 	}
 
 	// calculate bonus point if applicable
