@@ -1,21 +1,26 @@
 <?php 
 
 require('tools.php');
+require('Form.php');
+
+use DWA\Form;
+
+// instantiate new FORM object/class
+$form = new Form($_GET);
 
 // get tiles values file
 $tilesJson = file_get_contents('tiles.js');
-$tiles = json_decode($tilesJson, true);
+$tilesValues = json_decode($tilesJson, true);
 
-// get inputs from user
-$word = (isset($_GET['word'])) ? $_GET['word'] : '';
-$bonus = (isset($_GET['bonus'])) ? $_GET['bonus'] : '';
-$bingo = (isset($_GET['bingo'])) ? $_GET['bingo'] : '';
+// values - get user inputs from Form
+$word = $form->get('word', '');
+$bonus = $form->get('bonus', '');
+$bingo = $form->isChosen('bingo');
 
-
-// total score
+// variables
 $score = 0;
 
-if($word != '') {
+if($form->isSubmitted()) {
 
 	// convert input from user to caps
 	$wordCaps = strtoupper($word);
@@ -25,20 +30,20 @@ if($word != '') {
 
 	// sum values for each letter
 	for ($i = 0; $i < $totalLetters; $i++) {
-		$value += $tiles[$wordCaps[$i]];
+		$value += $tilesValues[$wordCaps];
 	}
 
 	// calculate bonus point if applicable
 	if($bonus == "double") {
-		$value = $value * 2;
+		$score = $score * 2;
 	} 
 	else if($bonus == "triple") {
-		$value = $value * 3;
+		$score = $score * 3;
 	}
 
 	// include 50 point "bingo" if applicable
 	if(($bingo) && ($totalLetters == 7)) {
-		$value += 50;
+		$score += 50;
 	}
 
 }
