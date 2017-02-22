@@ -5,36 +5,50 @@ require('Form.php');
 
 use DWA\Form;
 
-// instantiate new FORM object/class
+
+// INSTANTIATE NEW OBJECTS/CLASSES
 $form = new Form($_GET);
 
-// get tiles values file
+
+// CALL FILE: get the file with tiles values
 $tilesJson = file_get_contents('tiles.js');
 $tilesValues = json_decode($tilesJson, true);
 
-// values - get user inputs from Form
+
+// VALUES: get user inputs from Form
 $word = $form->get('word', '');
 $bonus = $form->get('bonus', '');
 $bingo = $form->isChosen('bingo');
 
-// variables
+
+// DEFINE VARIABLES
 global $score;
 
 
 if($form->isSubmitted()) {
 
-	// convert input from user to caps
+
+	// VALIDATION: for required field and letters only
+	$errors = $form->validate([
+		'word' => 'required|alpha',
+	]);
+
+
+	// CONVERT INPUT FROM USER INTO CAPS
 	$wordCaps = strtoupper($word);
 
-	// get number of letters in the word
+
+	// GET LENGTH IN 'WORD': used for efficiency purposes
 	$totalLetters = strlen($wordCaps);
 
-	// sum values for each letter
+
+	// SUM VALUES OF EACH LETTER/TILE
 	for ($i = 0; $i < $totalLetters; $i++) {
 		$score += $tilesValues[$wordCaps[$i]];
 	}
 
-	// calculate bonus point if applicable
+
+	// CALCULATE BONUS POINT IF APPLICABLE
 	if($bonus == "double") {
 		$score = $score * 2;
 	} 
@@ -42,7 +56,8 @@ if($form->isSubmitted()) {
 		$score = $score * 3;
 	}
 
-	// include 50 point "bingo" if applicable
+
+	// INCLUDE 50 POINTS "BINGO" IF 7 LETTERS WORD
 	if(($bingo) && ($totalLetters == 7)) {
 		$score += 50;
 	}

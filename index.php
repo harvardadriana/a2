@@ -20,6 +20,15 @@
 				<!-- YOUR WORD: get user input -->
 				<label for="word" class="textinput">Your word<br /><span class="required" >&#42;Required</span></label>
 				<input type="text" name="word" id="word" class="textinput" maxlength="7" required value="<?=sanitize($word)?>"/>
+				
+				<!-- DISPLAYS ERROR MESSAGES: field required and letters only -->
+				<?php if($errors): ?>
+					<div class="errors">
+						<?php foreach($errors as $error): ?>
+							<?=$error?></br />
+						<?php endforeach; ?>						
+					</div>
+				<?php endif; ?>
 
 				<!-- BONUS POINT -->
 				<fieldset>
