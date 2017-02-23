@@ -1,4 +1,4 @@
-/*  reset css  
+/*  RESET CSS  
  *****************/
 body, img, label, input, legend, fieldset  {
 	padding: 0;
@@ -6,7 +6,7 @@ body, img, label, input, legend, fieldset  {
 }
 
 
-/*  general styles  
+/*  GENERAL STYLES  
  *****************/
 html {
 	background-color: #3B3E71;
@@ -40,19 +40,8 @@ img {
 }
 
 
-/*  forms
+/*  FORMS
  *****************/
-.required {
-	color: red;
-	font-size: small;
-	font-style: italic;
-}
-
-.errors {
-	color: red;
-	font-style: italic;
-}
-
 label.textinput, legend {
 	display: block;
 	float: left;
@@ -98,7 +87,21 @@ input[type="submit"] {
 	border-radius: 15px;
 }
 
-#results {
+
+/*  WARNINGS/MESSAGES
+ *****************/
+.required {
+	color: red;
+	font-size: small;
+	font-style: italic;
+}
+
+.errors {
+	color: red;
+	font-style: italic;
+}
+
+.results {
 	width: 400px;
 	margin: 0 auto;
 	padding: 7px 40px;

@@ -11,21 +11,21 @@
 
 		<main>
 
-			<h1>Scrabble Word Score Calculator</h1>
+			<h1>DWA Scrabble - Word Score Calculator</h1>
 			<!-- <img> wrapped in <p> tag for semantic reasons -->
-			<p><img src="images/scrabble.jpg" alt="Scrabble Wooden Letters" /></p>
+			<p><img src="images/scrabble.jpg" alt="Tiles - Wooden Letters" /></p>
 			
 			<form method="GET" action="index.php">
 
 				<!-- YOUR WORD: get user input -->
 				<label for="word" class="textinput">Your word<br /><span class="required" >&#42;Required</span></label>
-				<input type="text" name="word" id="word" class="textinput" maxlength="7" required value="<?=sanitize($word)?>"/>
+				<input type="text" name="word" id="word" class="textinput" maxlength="15" required value="<?=$form->sanitize($word)?>"/>
 				
 				<!-- DISPLAYS ERROR MESSAGES: field required and letters only -->
 				<?php if($errors): ?>
 					<div class="errors">
 						<?php foreach($errors as $error): ?>
-							<?=$error?></br />
+							<?=$error?><br />
 						<?php endforeach; ?>						
 					</div>
 				<?php endif; ?>
@@ -52,7 +52,7 @@
 				<input type="submit" name="calculate" value="Calculate" />
 
 				<!-- DISPLAY SCORE  -->
-				<div id="results">
+				<div class="results">
 					<p>Score: <?=$results?></p>
 				</div>
 

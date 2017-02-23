@@ -41,8 +41,8 @@
 				$score = $score * 3;
 			}
 
-			// INCLUDE 50 POINTS "BINGO" IF 7 LETTERS WORD
-			if(($bingo) && ($length == 7)) {
+			// INCLUDE 50 POINTS "BINGO" IF WORD HAS 7 OR MORE LETTERS
+			if(($bingo) && ($length >= 7)) {
 				$score += 50;
 			}
 
