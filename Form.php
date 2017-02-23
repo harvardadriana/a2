@@ -47,35 +47,12 @@ class Form {
     /**
 	* Determines if a single checkbox is checked
     * Example usage:
-    *   <input type='checkbox' name='caseSensitive' <?php if($form->isChecked('caseSensitive')) echo 'CHECKED' ?>>
+    *   <input type='checkbox' name='caseSensitive' <?php if($form->isChosen('caseSensitive')) echo 'CHECKED' ?>>
 	*/
     public function isChosen($name) {
         $value = isset($this->request[$name]) ? true : false;
 
         return $value;
-    }
-
-
-    /**
-	* Use in display files to prefill the values of fields if those values are in the request
-    * Second optional parameter lets you set a default value if value does not exist
-    *
-    * Example usage:
-    *   <input type='text' name='email' value='<?=$form->prefill($email, "example@gmail.com")?>'>
-	*/
-    public function prefill($field, $default = '', $sanitize = true) {
-
-        if(isset($this->request[$field])) {
-            if($sanitize) {
-                return $this->sanitize($this->request[$field]);
-            }
-            else {
-                return $this->request[$field];
-            }
-        }
-        else {
-            return $default;
-        }
     }
 
 
@@ -146,7 +123,7 @@ class Form {
         }
 
         # Set public property hasErrors as Boolean
-        $this->hasErrors = empty($errors);
+        $this->hasErrors = !empty($errors);
 
         return $errors;
 
@@ -180,15 +157,7 @@ class Form {
 
     ### VALIDATION METHODS FOUND BELOW HERE ###
 
-    /**
-	* Returns boolean if given value contains only letters/numbers/spaces
-	*/
-    private function alphaNumeric($value) {
-        return ctype_alnum(str_replace(' ','', $value));
-    }
-
-
-    /**
+   /**
 	* Returns boolean if given value contains only letters/spaces
 	*/
     private function alpha($value) {
@@ -196,44 +165,12 @@ class Form {
     }
 
 
-    /**
-	* Returns boolean if given value contains only numbers
-	*/
-    private function numeric($value) {
-        return ctype_digit(str_replace(' ','', $value));
-    }
-
-
-    /**
+  /**
 	* Returns boolean if the given value is not blank
 	*/
     private function required($value) {
         $value = trim($value);
         return $value != '' && isset($value) && !is_null($value);
-    }
-
-
-    /**
-	* Returns boolean if the given value is a valid email address
-	*/
-    private function email($value) {
-        return filter_var($value, FILTER_VALIDATE_EMAIL);
-    }
-
-
-    /**
-	* Returns value if the given value is GREATER THAN (non-inclusive) the given parameter
-	*/
-    private function min($value, $parameter) {
-        return floatval($value) > floatval($parameter);
-    }
-
-
-    /**
-	* Returns value if the given value is LESS THAN (non-inclusive) the given parameter
-	*/
-    private function max($value, $parameter) {
-        return floatval($value) < floatval($parameter);
     }
 
 

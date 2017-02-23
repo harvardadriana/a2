@@ -52,8 +52,8 @@
 				<input type="submit" name="calculate" value="Calculate" />
 
 				<!-- DISPLAY SCORE  -->
-				<div id="score">
-					<p>Score: <?=$score?></p>
+				<div id="results">
+					<p>Score: <?=$results?></p>
 				</div>
 
 			</form>

@@ -48,6 +48,11 @@ img {
 	font-style: italic;
 }
 
+.errors {
+	color: red;
+	font-style: italic;
+}
+
 label.textinput, legend {
 	display: block;
 	float: left;
@@ -93,7 +98,7 @@ input[type="submit"] {
 	border-radius: 15px;
 }
 
-#score {
+#results {
 	width: 400px;
 	margin: 0 auto;
 	padding: 7px 40px;
