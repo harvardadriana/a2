@@ -6,35 +6,40 @@ body, img, label, input, legend, fieldset  {
 }
 
 
-/*  GENERAL STYLES  
+/*  LAYOUT  
  *****************/
-html {
+#left {
+	float: left;
+	width: 50%;
+	height: 100vh;
+	color: #fff;
 	background-color: #3B3E71;
-}
-
-body {
-	margin: 0 auto;
-	width: 660px;
-	height: auto;
-}
-
-main {
-	margin-top: 50px;
-	background-color: #fff;
-	border-radius: 25px;
-	padding: 36px;
-}
-
-h1 {
-	color: #17182d;
-}
-
-h1, p {
 	text-align: center;	
 }
 
+#right {	
+	float: right;
+	width: 50%;
+	height: 100vh;
+	background-color: #fafafa;
+}
+
+
+/*  GENERAL STYLES  
+ *****************/
+h1 {
+	margin-top: 90px;
+	font-size: 43px;
+	letter-spacing: 0.4em;
+}
+
+h2 {
+	font-size: 32px;
+	margin-bottom: 45px;
+}
+
 img {
-	width: 300px;
+	width: 400px;
 	height: auto;
 	margin-bottom: 16px;
 }
@@ -42,28 +47,36 @@ img {
 
 /*  FORMS
  *****************/
-label.textinput, legend {
+label.textinput, 
+input.textinput, 
+legend, fieldset {
 	display: block;
-	float: left;
+	margin: 0 auto;	
+}
+
+label.textinput {
 	width: 250px;
-	text-align: right; 
-	margin-right: 15px;
+	margin-top: 5em;
+	text-align: center; 
 	font-weight: bold;
 }
 
 input.textinput {
-	width: 150px;
-	height: 30px;
+	margin-top: .5em;
+	width: 250px;
+	height: 50px;
+	border-radius: 5px;
+	font-size: 1.8em;
+	padding: 8px;
 }
 
 fieldset {
-	margin: 25px 0;
-	border: none;
-}
-
-div#bonus, div#bingo {
-	float: left;
-	width: 200px;
+	width: 250px;
+	margin-top: 32px;
+	background-color: #fff;
+	padding: 18px 8px;
+	border-radius: 5px;
+	color: #54555b;
 }
 
 #bonus label {
@@ -72,19 +85,21 @@ div#bonus, div#bingo {
 
 #bonus input, #bingo input {
 	margin-right: 10px;
+	margin-left: 30px;
 }
 
 #note {
-	font-weight: normal;
+	font-size: small;
 }
 
 input[type="submit"] {
 	display: block;
+	margin: 0 auto;
+	margin-top: 25px;
 	width: 130px;
 	height: 40px;
-	margin: 30px 0 30px 265px;
 	background-color: #d7d8e2;
-	border-radius: 15px;
+	border-radius: 10px;
 }
 
 
@@ -92,21 +107,24 @@ input[type="submit"] {
  *****************/
 .required {
 	color: red;
-	font-size: small;
 	font-style: italic;
 }
 
 .errors {
 	color: red;
 	font-style: italic;
+	text-align: center;
+	font-weight: bold;
 }
 
 .results {
-	width: 400px;
+	width: 350px;
 	margin: 0 auto;
+	margin-top: 50px;
 	padding: 7px 40px;
 	color: #fff;
 	font-size: 150%;
 	background-color: #75779b;
-	border-radius: 25px;
+	border-radius: 15px;
+	text-align: center;
 }
