@@ -136,4 +136,12 @@ input[type="submit"] {
 	body {
 		min-width: 1200px;
 	}
+
+	label.textinput {
+		margin-top: 2em;
+	}
+
+	fieldset {
+		margin-top: 20px;
+	}
 }

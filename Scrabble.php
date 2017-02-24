@@ -3,6 +3,7 @@
 	class Scrabble {
 
 		private $tiles;
+		private $score;
 
 
 	    /**
@@ -19,7 +20,7 @@
 	    /**
 		*  CALCULATE THE VALUE OF EACH TILE AND RETURN THE TOTAL SCORE
 		*/
-		public function getScore(String $word, String $bonus, $bingo = true) {
+		public function getScore($word, $bonus, $bingo = true) {
 
 			// CONVERT INPUT FROM USER INTO CAPS
 			$wordCaps = strtoupper($word);		
