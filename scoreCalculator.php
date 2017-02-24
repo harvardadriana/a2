@@ -16,9 +16,13 @@
 	$bonus = $form->get('bonus', '');
 	$bingo = $form->isChosen('bingo');
 
+	// VARIABLES
+	global $errors;
+	global $results;
 
 	if($form->isSubmitted()) {
 
+		$word = $form->sanitize($word);
 
 		// VALIDATION: check for required field and letters only
 		$errors = $form->validate([

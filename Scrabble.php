@@ -28,6 +28,9 @@
 			global $length;
 			$length = strlen($wordCaps);
 
+			// GLOBAL VARIABLES
+			global $score;
+
 			// SUM VALUES OF EACH LETTER/TILE
 			for ($i = 0; $i < $length; $i++) {
 				$score += ($this->tiles[$wordCaps[$i]]);

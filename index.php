@@ -23,7 +23,7 @@
 
 					<!-- YOUR WORD: get user input -->
 					<label for="word" class="textinput required" >&#42;Required</label>
-					<input type="text" name="word" id="word" class="textinput" maxlength="15" placeholder="Type your word" required value="<?=$form->sanitize($word)?>" /><br />
+					<input type="text" name="word" id="word" class="textinput" maxlength="15" placeholder="Type your word" required value="<?=$word?>" /><br />
 
 					<!-- DISPLAYS ERROR MESSAGES: field required and letters only -->
 					<?php if($errors): ?>
